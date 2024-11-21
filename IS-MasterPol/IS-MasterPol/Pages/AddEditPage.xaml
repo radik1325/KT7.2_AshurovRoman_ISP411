@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:IS_MasterPol.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ИС - Мастер пол, главная страница" Background="White">
+      Title="ИС - Мастер пол, страница добавления/редактирования" Background="White">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -15,10 +15,10 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150"></ColumnDefinition>
-                <ColumnDefinition Width="150"></ColumnDefinition>
-                <ColumnDefinition Width="150"></ColumnDefinition>
-                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+                <ColumnDefinition Width="250"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
@@ -31,13 +31,29 @@
             <TextBox Grid.Row="0" Grid.Column="1" x:Name="NameBox"></TextBox>
 
             <TextBlock Text="Тип партнера" Grid.Row="1" Grid.Column="0"></TextBlock>
-            <ComboBox Grid.Row="1" Grid.Column="1" x:Name="TypeBox"></ComboBox>
+            <ComboBox Grid.Row="1" Grid.Column="1" x:Name="TypeBox" DisplayMemberPath="TypePartnerName" ></ComboBox>
 
             <TextBlock Text="Рейтинг" Grid.Row="2" Grid.Column="0"></TextBlock>
-            <TextBox Grid.Row="0" Grid.Column="2" x:Name="RatingBox"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="1" x:Name="RatingBox"></TextBox>
             
             <TextBlock Text="ФИО" Grid.Row="3" Grid.Column="0"></TextBlock>
-            <TextBox Grid.Row="0" Grid.Column="3" x:Name="FIOBox"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="1" x:Name="FIOBox"></TextBox>
+
+            <TextBlock Text="Телефон" Grid.Row="0" Grid.Column="2"></TextBlock>
+            <TextBox Grid.Row="0" Grid.Column="3" x:Name="PhoneBox"></TextBox>
+
+            <TextBlock Text="Почта" Grid.Row="1" Grid.Column="2"></TextBlock>
+            <TextBox Grid.Row="1" Grid.Column="3" x:Name="EmailBox"></TextBox>
+            
+            <TextBlock Text="Адрес" Grid.Row="2" Grid.Column="2"></TextBlock>
+            <TextBox Grid.Row="2" Grid.Column="3" x:Name="AdressBox" Grid.RowSpan="2" TextWrapping="Wrap" ></TextBox>
+
+            
         </Grid>
+        <Button Grid.Row="1" x:Name="BackButton" Click="BackButton_Click" Content="Назад"
+                VerticalAlignment="Center" HorizontalAlignment="Left" Margin="150,0,0,0"></Button>
+
+        <Button Grid.Row="1" x:Name="AddButton" Click="AddButton_Click" Content="Сохранить"
+                VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,150,0"></Button>
     </Grid>
 </Page>
